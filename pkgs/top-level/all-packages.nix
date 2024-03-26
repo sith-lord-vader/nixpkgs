@@ -7859,12 +7859,17 @@ with pkgs;
   # The latest version used by elasticsearch, logstash, kibana and the the beats from elastic.
   # When updating make sure to update all plugins or they will break!
   elk7Version = "7.17.16";
+  elk8Version = "8.12.2";
 
   elasticsearch7 = callPackage ../servers/search/elasticsearch/7.x.nix {
     util-linux = util-linuxMinimal;
     jre_headless = jdk11_headless; # TODO: remove override https://github.com/NixOS/nixpkgs/pull/89731
   };
-  elasticsearch = elasticsearch7;
+  elasticsearch8 = callPackage ../servers/search/elasticsearch/8.x.nix {
+    util-linux = util-linuxMinimal;
+    jre_headless = jdk17_headless; # TODO: remove override https://github.com/NixOS/nixpkgs/pull/89731
+  };
+  elasticsearch = elasticsearch8;
 
   elasticsearchPlugins = recurseIntoAttrs (
     callPackage ../servers/search/elasticsearch/plugins.nix {}
