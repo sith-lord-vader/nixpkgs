@@ -37,6 +37,10 @@ buildPythonPackage rec {
     sqlparse
   ];
 
+  pythonImportsCheck = [
+    "pymssql"
+  ];
+
   meta = with lib; {
     description = "A simple database interface for Python that builds on top of FreeTDS to provide a Python DB-API (PEP-249) interface to Microsoft SQL Server.";
     homepage = "https://github.com/pymssql/pymssql";
