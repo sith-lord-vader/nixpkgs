@@ -1,0 +1,10 @@
+stages:
+  - build
+  - report
+
+build:
+  stage: build
+  script:
+    - nix build .#legacyPackages.x86_64-linux.python311Packages.pymssql --option sandbox true
+  rules:
+    - when: always
