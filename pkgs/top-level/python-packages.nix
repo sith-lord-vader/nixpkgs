@@ -11819,6 +11819,8 @@ self: super: with self; {
 
   pymvglive = callPackage ../development/python-modules/pymvglive { };
 
+  pymssql = callPackage ../development/python-modules/pymssql { };
+
   pymysensors = callPackage ../development/python-modules/pymysensors { };
 
   pymysql = callPackage ../development/python-modules/pymysql { };
