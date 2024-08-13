@@ -11811,6 +11811,8 @@ self: super: with self; {
 
   pymsteams = callPackage ../development/python-modules/pymsteams { };
 
+  pymssql = callPackage ../development/python-modules/pymssql { };
+
   py-multiaddr = callPackage ../development/python-modules/py-multiaddr { };
 
   py-multibase = callPackage ../development/python-modules/py-multibase { };
